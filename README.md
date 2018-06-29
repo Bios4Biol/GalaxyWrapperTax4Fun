@@ -1,8 +1,7 @@
-# GalaxyWrapperTax4Fun
+# Galaxy Wrapper Tax4Fun
+
 Predicts the functional or metabolic capabilities of microbial communities based on 16S data samples and Function Table for Tax4Fun matrix 
-
 This Galaxy wrapper allow to use BIOM output file from Frogs to run Tax4Fun metabolic and functional prediction.
-
 This Tax4Fun pipeline can be run after Frogs pipeline. Output BIOM file is Tax4Fun input file.
 
 A- First, we convert BIOM output file from Frogs in en standard BIOM file thanks to this Galaxy tool : «FROGS BIOM to std BIOM
