@@ -46,7 +46,7 @@ ln -s /path/to/tools/sm_Tax4Fun/sm_Tax4Fun.R /path/to/bin/scripts_R/.
 and add the path in your galaxy.ini file :
 <pre>
 [workPath]
-SCRIPTS_R_path=/galaxydata/galaxy-preprod/my_bin/scripts_R/
+SCRIPTS_R_path=/path/to/scripts_R/
 </pre> 
  
 4 - Specify pah to SILVA123 in sm_Tax4Fun.xml file, in the label names "Folder location of the unzipped reference data"
