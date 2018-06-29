@@ -1,22 +1,23 @@
 # GalaxyWrapperTax4Fun
 Predicts the functional or metabolic capabilities of microbial communities based on 16S data samples and Function Table for Tax4Fun matrix 
 
-Ce wrapper Galaxy permet de passer du BIOM issu de FROGS à la prédiction métabolique et fonctionnelle Tax4Fun
+This Galaxy wrapper allow to use BIOM output file from Frogs to run Tax4Fun metabolic and functional prediction.
 
-Ce pipeline Tax4Fun peut être lançé à la suite du pipeline FROGS. Le BIOM sortant sera le fichier d'entrée de ce pipeline Tax4Fun.
+This Tax4Fun pipeline can be run after Frogs pipeline. Output BIOM file is Tax4Fun input file.
 
-A- Dans un permier temps, nous convertissons le BIOM issu de FROGS en BIOM standard à l'aide de l'outil «FROGS BIOM to std BIOM
+A- First, we convert BIOM output file from Frogs in en standard BIOM file thanks to this Galaxy tool : «FROGS BIOM to std BIOM
   Converts a FROGS BIOM in fully compatible BIOM. (Galaxy Version 1.1.0)»
   
-B- Nous convertissons ensuite le BIOM standard obtenu en fichier TSV à l'aide de l'outil «FROGS BIOM to TSV Converts a BIOM file in TSV file. (Galaxy Version 2.1.0)»
+B- Then, we convert this standard BIOM in a TSV file with this Galaxy tool : «FROGS BIOM to TSV Converts a BIOM file in TSV file. (Galaxy Version 2.1.0)»
 
-C-  Seules deux colonnes sont à donner en entrée de Tax4Fun : l'abondance totale et la taxonomie. Pour récupérer ces informations, nous utilisons l'outil «Cut columns from a table (Galaxy Version 1.0.2) » afin de générer deux fichiers : un fichier avec la colonne Taxonomie, et un autre avec la colonne   abondance_sum.   L'outil   « Paste two   files   side   by   side   (Galaxy   Version   1.0.0) »   nous permet ensuite de générer un seul fichier avec, colonne de gauche, l'abondance totale, et, colonne de droite, la taxonomie.
+C- Only two columns have to be kept in Tax4Fun input file : total abundance and taxonomy. To recover these informations, we run this Galaxy tool : «Cut columns from a table (Galaxy Version 1.0.2) » in order to generate two files : one with taxonomy column and another one with abondance_sum column. Then Galaxy tool « Paste two   files   side   by   side   (Galaxy   Version   1.0.0) »   allow us to generate an unic file with a left colmun containing total abundance data and, a right column with toxonomy. Be careful, the order of the columns is important.
   
-E- Le   nouvel   outil   « Tax4Fun predicts   the   functional   or   metabolic   capabilities   of   microbial communities   based   on   16S   data   samples   (Galaxy   Version   1.0.0) »   prends   en   entrée   le   fichier précédent, trie les  données, reformate la taxonomie, et somme  les abondances  pour les  mêmes informations   taxonomiques. 
-Il   est   important   de   souligner   que   la   référence   disponible   est SILVA123.
+E- The new Galaxy tool entitled « Tax4Fun predicts   the   functional   or   metabolic   capabilities   of   microbial communities   based   on   16S   data   samples   (Galaxy   Version   1.0.0) »  take as input file the previous one (step C), sort data, reformate taxonomy, and add abundancescorresponding to the same taxonomic informations.
+
+It is important to note that the only available reference is SILVA123.
 
 
-# How ton install Tax4Fun wrapper ?
+# How to install Tax4Fun wrapper ?
 
 1 - Add Tax4Fun files (xml, perl and R) in tools directory 
 <pre>
