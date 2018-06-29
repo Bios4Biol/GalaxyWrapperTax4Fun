@@ -54,6 +54,10 @@ SCRIPTS_R_path=/path/to/scripts_R/
     option value="/Path/to/sm_Tax4Fun/SILVA123/"
 </pre>
 
+# Ready to use Galaxy pipeline
+
+https://github.com/Bios4Biol/GalaxyWrapperTax4Fun/blob/master/Galaxy-Workflow-Workflow_constructed_from_history__TAX4FUN_.ga
+
 
 # References
 
