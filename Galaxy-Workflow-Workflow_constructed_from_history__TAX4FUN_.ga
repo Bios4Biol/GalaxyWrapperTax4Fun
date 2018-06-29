@@ -1,0 +1,234 @@
+{
+    "a_galaxy_workflow": "true", 
+    "annotation": "", 
+    "format-version": "0.1", 
+    "name": "Workflow constructed from history 'TAX4FUN'", 
+    "steps": {
+        "0": {
+            "annotation": "", 
+            "content_id": null, 
+            "id": 0, 
+            "input_connections": {}, 
+            "inputs": [
+                {
+                    "description": "", 
+                    "name": "Input Dataset"
+                }
+            ], 
+            "label": null, 
+            "name": "Input dataset", 
+            "outputs": [], 
+            "position": {
+                "left": 200, 
+                "top": 311
+            }, 
+            "tool_errors": null, 
+            "tool_id": null, 
+            "tool_state": "{\"name\": \"Input Dataset\"}", 
+            "tool_version": null, 
+            "type": "data_input", 
+            "uuid": "44401006-15ba-4ffd-9924-a4f96ffc80c0", 
+            "workflow_outputs": []
+        }, 
+        "1": {
+            "annotation": "", 
+            "content_id": "Cut1", 
+            "id": 1, 
+            "input_connections": {}, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Cut", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 771, 
+                "top": 285
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "Cut1", 
+            "tool_state": "{\"__page__\": 0, \"__rerun_remap_job_id__\": null, \"delimiter\": \"\\\"T\\\"\", \"columnList\": \"\\\"c9\\\"\", \"input\": \"null\", \"chromInfo\": \"\\\"/galaxydata/galaxy-preprod/my_tool-data/shared/ucsc/chrom/?.len\\\"\"}", 
+            "tool_version": "1.0.2", 
+            "type": "tool", 
+            "uuid": "5ed51d04-70d0-43b1-b1f2-83659f2514dc", 
+            "workflow_outputs": []
+        }, 
+        "2": {
+            "annotation": "", 
+            "content_id": "FROGS_biom_to_stdBiom", 
+            "id": 2, 
+            "input_connections": {
+                "input_biom": {
+                    "id": 0, 
+                    "output_name": "output"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "FROGS BIOM to std BIOM", 
+            "outputs": [
+                {
+                    "name": "output_biom", 
+                    "type": "biom1"
+                }, 
+                {
+                    "name": "output_metadata", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 371, 
+                "top": 280
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "FROGS_biom_to_stdBiom", 
+            "tool_state": "{\"__page__\": 0, \"input_biom\": \"null\", \"chromInfo\": \"\\\"/galaxydata/galaxy-preprod/my_tool-data/shared/ucsc/chrom/?.len\\\"\", \"__rerun_remap_job_id__\": null}", 
+            "tool_version": "1.1.0", 
+            "type": "tool", 
+            "uuid": "551ee02f-e9de-4809-a2a2-67f16b98889c", 
+            "workflow_outputs": []
+        }, 
+        "3": {
+            "annotation": "", 
+            "content_id": "FROGS_biom_to_tsv", 
+            "id": 3, 
+            "input_connections": {
+                "biom_file": {
+                    "id": 2, 
+                    "output_name": "output_biom"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "FROGS BIOM to TSV", 
+            "outputs": [
+                {
+                    "name": "tsv_file", 
+                    "type": "tabular"
+                }, 
+                {
+                    "name": "multi_affi_file", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 582, 
+                "top": 285
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "FROGS_biom_to_tsv", 
+            "tool_state": "{\"__page__\": 0, \"__rerun_remap_job_id__\": null, \"sequence_file\": \"null\", \"extract_multi_align\": \"\\\"False\\\"\", \"chromInfo\": \"\\\"/galaxydata/galaxy-preprod/my_tool-data/shared/ucsc/chrom/?.len\\\"\", \"biom_file\": \"null\"}", 
+            "tool_version": "2.1.0", 
+            "type": "tool", 
+            "uuid": "70d4fb8a-0079-4d66-b43b-2f55164333d6", 
+            "workflow_outputs": []
+        }, 
+        "4": {
+            "annotation": "", 
+            "content_id": "Cut1", 
+            "id": 4, 
+            "input_connections": {
+                "input": {
+                    "id": 3, 
+                    "output_name": "tsv_file"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Cut", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "tabular"
+                }
+            ], 
+            "position": {
+                "left": 775, 
+                "top": 386
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "Cut1", 
+            "tool_state": "{\"__page__\": 0, \"__rerun_remap_job_id__\": null, \"delimiter\": \"\\\"T\\\"\", \"columnList\": \"\\\"c1\\\"\", \"input\": \"null\", \"chromInfo\": \"\\\"/galaxydata/galaxy-preprod/my_tool-data/shared/ucsc/chrom/?.len\\\"\"}", 
+            "tool_version": "1.0.2", 
+            "type": "tool", 
+            "uuid": "e5c36ea2-97f1-45e7-9015-bfe6687a3e33", 
+            "workflow_outputs": []
+        }, 
+        "5": {
+            "annotation": "", 
+            "content_id": "Paste1", 
+            "id": 5, 
+            "input_connections": {
+                "input1": {
+                    "id": 1, 
+                    "output_name": "out_file1"
+                }, 
+                "input2": {
+                    "id": 4, 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Paste", 
+            "outputs": [
+                {
+                    "name": "out_file1", 
+                    "type": "input"
+                }
+            ], 
+            "position": {
+                "left": 943, 
+                "top": 318
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "Paste1", 
+            "tool_state": "{\"input2\": \"null\", \"__page__\": 0, \"input1\": \"null\", \"__rerun_remap_job_id__\": null, \"delimiter\": \"\\\"T\\\"\", \"chromInfo\": \"\\\"/galaxydata/galaxy-preprod/my_tool-data/shared/ucsc/chrom/?.len\\\"\"}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "uuid": "ac6b2cd5-16b0-4010-a3c4-e89f8aad9289", 
+            "workflow_outputs": []
+        }, 
+        "6": {
+            "annotation": "", 
+            "content_id": "sm_Tax4Fun", 
+            "id": 6, 
+            "input_connections": {
+                "input": {
+                    "id": 5, 
+                    "output_name": "out_file1"
+                }
+            }, 
+            "inputs": [], 
+            "label": null, 
+            "name": "Tax4Fun", 
+            "outputs": [
+                {
+                    "name": "output", 
+                    "type": "txt"
+                }
+            ], 
+            "position": {
+                "left": 1123, 
+                "top": 322
+            }, 
+            "post_job_actions": {}, 
+            "tool_errors": null, 
+            "tool_id": "sm_Tax4Fun", 
+            "tool_state": "{\"input\": \"null\", \"__rerun_remap_job_id__\": null, \"chromInfo\": \"\\\"/galaxydata/galaxy-preprod/my_tool-data/shared/ucsc/chrom/?.len\\\"\", \"reference\": \"\\\"/galaxydata/galaxy-preprod/my_tools/sm_Tax4Fun/SILVA123/\\\"\", \"__page__\": 0}", 
+            "tool_version": "1.0.0", 
+            "type": "tool", 
+            "uuid": "65fef27b-a217-4ec0-991d-5e68300b3a96", 
+            "workflow_outputs": []
+        }
+    }, 
+    "uuid": "2fb1110e-3dce-4a71-9516-988a5ff7ca17"
+}
