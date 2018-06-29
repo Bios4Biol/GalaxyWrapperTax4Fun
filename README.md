@@ -14,3 +14,41 @@ C-  Seules deux colonnes sont à donner en entrée de Tax4Fun : l'abondance tota
   
 E- Le   nouvel   outil   « Tax4Fun predicts   the   functional   or   metabolic   capabilities   of   microbial communities   based   on   16S   data   samples   (Galaxy   Version   1.0.0) »   prends   en   entrée   le   fichier précédent, trie les  données, reformate la taxonomie, et somme  les abondances  pour les  mêmes informations   taxonomiques. 
 Il   est   important   de   souligner   que   la   référence   disponible   est SILVA123.
+
+
+# How ton install Tax4Fun wrapper ?
+
+1 - Add Tax4Fun files (xml, perl and R) in tools directory 
+<pre>
+Create a sm_Tax4Fun/ directory in tools/
+Get Tax4Fun files in this new directory
+</pre>
+
+2 - Add Tax4Fun wrapper in your Tool Menu
+<pre>
+Add TAX4FUN wrapper in your tool_conf.xml file :
+geany ../../my_config/my_tool_conf.xml &
+in your FROGS section:
+<tool file="my_tools/sm_Tax4Fun/sm_Tax4Fun.xml" />
+</pre>
+
+3 - Create a symbolique link for the R script
+<pre>
+ln -s /path/to/tools/sm_Tax4Fun/sm_Tax4Fun.R /path/to/bin/scripts_R/.
+</pre>
+
+and add the path in your galaxy.ini file :
+<pre>
+[workPath]
+SCRIPTS_R_path=/galaxydata/galaxy-preprod/my_bin/scripts_R/
+</pre> 
+ 
+4 - Change pah to SILVA123 in sm_Tax4Fun.xml file
+<pre>
+<param name="reference" type="select" label="Folder location of the unzipped reference data">
+    <option value="/Path/to/sm_Tax4Fun/SILVA123/">SILVA123</option>
+    <option value="No">OTHER TODO</option>
+</param> 
+</pre>
+
+
