@@ -49,3 +49,14 @@ SCRIPTS_R_path=/galaxydata/galaxy-preprod/my_bin/scripts_R/
 </pre>
 
 
+# References
+
+K.P. Aßhauer, B. Wemheuer, R. Daniel, P. Meinicke (2015)
+Tax4Fun: predicting functional profiles from metagenomic 16S rRNA data
+Bioinformatics (2015) 31 (17): 2882-2884. doi:10.1093/bioinformatics/btv287. 
+
+# Galaxy wrapper
+
+Contacts : support.sigenae@inra.fr
+
+E-learning available : http://genoweb.toulouse.inra.fr/~formation/GALAXY_news/howto3_Tax4Fun.pdf
