@@ -4,6 +4,10 @@ Predicts the functional or metabolic capabilities of microbial communities based
 This Galaxy wrapper allow to use BIOM output file from Frogs to run Tax4Fun metabolic and functional prediction.
 This Tax4Fun pipeline can be run after Frogs pipeline. Output BIOM file is Tax4Fun input file.
 
+
+![alt text](https://raw.githubusercontent.com/Bios4Biol/GalaxyWrapperTax4Fun/master/pipeline_tax4fun.png)
+
+
 A- First, we convert BIOM output file from Frogs in en standard BIOM file thanks to this Galaxy tool : «FROGS BIOM to std BIOM
   Converts a FROGS BIOM in fully compatible BIOM. (Galaxy Version 1.1.0)»
   
@@ -11,6 +15,8 @@ B- Then, we convert this standard BIOM in a TSV file with this Galaxy tool : «F
 
 C- Only two columns have to be kept in Tax4Fun input file : total abundance and taxonomy. To recover these informations, we run this Galaxy tool : «Cut columns from a table (Galaxy Version 1.0.2) » in order to generate two files : one with taxonomy column and another one with abondance_sum column. Then Galaxy tool « Paste two   files   side   by   side   (Galaxy   Version   1.0.0) »   allow us to generate an unic file with a left colmun containing total abundance data and, a right column with toxonomy. Be careful, the order of the columns is important.
   
+![alt text](https://raw.githubusercontent.com/Bios4Biol/GalaxyWrapperTax4Fun/master/tax4fun_input_file.png)
+
 E- The new Galaxy tool entitled « Tax4Fun predicts   the   functional   or   metabolic   capabilities   of   microbial communities   based   on   16S   data   samples   (Galaxy   Version   1.0.0) »  take as input file the previous one (step C), sort data, reformate taxonomy, and add abundancescorresponding to the same taxonomic informations.
 
 It is important to note that the only available reference is SILVA123.
